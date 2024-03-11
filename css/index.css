@@ -24,12 +24,20 @@ body {
   transform: translate(-50%);
   border-top: 3px solid #ea4d67;
   box-shadow: 0 10px 25px rgba(52, 87, 220, 0.1);
-  transition:  all .25s ease;
+  transition: all 0.25s ease;
 }
 
-.popup.show{
-    top: 0;
-    visibility: visible;
+.popup.show {
+  top: 0;
+  visibility: visible;
+}
+
+.popup.online {
+  border-color: #2ecc71;
+}
+
+.popup.online .icon i {
+  background: #2ecc71;
 }
 
 .popup .icon i {
@@ -54,14 +62,34 @@ body {
   font-size: 1.04rem;
 }
 
-.popup .reconnect{
-    border: none;
-    outline: none;
-    color: #fff;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: .95rem;
-    padding: 9px 15px;
-    border-radius: 4px;
-    background: #5372f0;
+.popup .reconnect {
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 9px 15px;
+  border-radius: 4px;
+  background: #5372f0;
+}
+
+.popup.online .reconnect {
+  background: #bfbfbf;
+  pointer-events: none;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 550px) {
+  .popup {
+    width: 100%;
+    padding: 10px 15px 17px;
+  }
 }
